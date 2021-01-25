@@ -34,6 +34,7 @@ class Home extends React.Component {
                                return (
                                   <HomeCategory
                                       key={index}
+                                      routeParam={category}
                                       image={Products[category].image}
                                         title={Products[category].name}
                                         descript={Products[category].description}
