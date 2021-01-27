@@ -8,7 +8,7 @@ import Category from './pages/Category';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-secondary">
       <Switch>
         <Route path='/' component={Home} exact/>
         <Route path='/login' component={Login}/>

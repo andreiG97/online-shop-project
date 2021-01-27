@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo-shop.png'
 import {Link} from 'react-router-dom';
 import './Header.css';
 import { ReactComponent as Cart} from '../assets/icons/shopping-cart.svg';
