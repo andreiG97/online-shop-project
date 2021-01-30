@@ -1,0 +1,17 @@
+.career-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin-left: 35%;
+    background-color: aliceblue;
+}
+
+.career-form, form input{
+    border-radius: 3px;
+    border-style: solid;
+    padding-right: 10%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+        
+}

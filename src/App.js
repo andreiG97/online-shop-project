@@ -6,6 +6,7 @@ import Login from './pages/Login.jsx';
 import Page404 from './pages/Page404.jsx';
 import {Route, Switch} from 'react-router-dom';
 import Category from './pages/Category';
+import Terms from './/pages/TermsAndConditions';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/login' component={Login}/>
         <Route path='/about' component={About}/>
         <Route path='/careers' component={Careers}/>
+        <Route path='/termsandconditions' component={Terms}/>
         <Route path='/category/:categoryName' component={Category}/>
         <Route path='*' component={Page404}/>
       </Switch>

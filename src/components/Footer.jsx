@@ -6,6 +6,7 @@ function Footer() {
         <div>
                 <Link to='/about'>About</Link>
                 <Link to='/careers'>Careers</Link>
+                <Link to='/termsandconditions'>Terms and Conditions</Link>
             
         </div>
     )
