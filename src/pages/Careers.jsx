@@ -3,6 +3,7 @@ import './Careers.css';
 import Layout from '../components/Layout';
 
 
+
 export default class Careers extends Component {
     constructor(props){
         super(props);
@@ -47,14 +48,14 @@ export default class Careers extends Component {
             <div className="container">
              <Layout>
                 
-                 <form className='career-form h-50 w-50 col-lg-6 offset-lg-3' onSubmit={(event) => this.handleSubmit(event)}>
+                 <form action="/termsandconditions" method="POST" encType="multipart/form-data" className='form form-group ' onSubmit={(event) => this.handleSubmit(event)}>
                      <h2>Apply here</h2>
                      <label htmlFor="name">Name</label>
-                     <input type="text" id='name' required value={this.state.name} onChange={(e) => this.handleName(e)}/>
+                     <input type="text" id='name' className="form-control" required value={this.state.name} onChange={(e) => this.handleName(e)}/>
                      <label htmlFor="email">Email</label>
-                    <input type="email" id='email' required value={this.state.email} onChange={(e) => this.handleEmail(e)}/>
+                    <input type="email" className="form-control" id='email' required value={this.state.email} onChange={(e) => this.handleEmail(e)}/>
                     <label htmlFor="file">CV</label>
-                    <input type="file" id='file' required  value={this.state.cv} onChange={(e) => this.handleCV(e)}/>
+                    <input type="file" className="form-control" id='file' required  value={this.state.cv} onChange={(e) => this.handleCV(e)}/>
                     <button type="submit" className="bg-primary">Apply</button>
                  </form>
              </Layout>
