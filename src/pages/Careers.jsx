@@ -38,7 +38,7 @@ export default class Careers extends Component {
         })
     }
 
- handleSubmit(event) {
+    handleSubmit(event) {
         event.preventDefault();
     
         console.log(event);
