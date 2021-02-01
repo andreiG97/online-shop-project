@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Layout from '../components/Layout';
 import Products from '../utils/products.json';
 
 export default class Category extends Component {
@@ -20,11 +21,14 @@ export default class Category extends Component {
 
     render() {
         return (
-            <div>
-                <h1>
+           <Layout>
+
+            <div className="container-fluid container-min-man-width">
+                <h2>
                     {this.state.category.name}
-                </h1>
+                </h2>
             </div>
+         </Layout>
         )
     }
 }

@@ -12,6 +12,7 @@ import Page404 from './pages/Page404.jsx';
 import {Route, Switch} from 'react-router-dom';
 import Category from './pages/Category';
 import Terms from './/pages/TermsAndConditions';
+import "./utils/utility-classes.css"
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
