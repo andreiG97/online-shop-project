@@ -2,3 +2,9 @@
 .form, form input{
     width: 70%;
 }
+
+.form{
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}

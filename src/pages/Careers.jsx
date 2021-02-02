@@ -45,10 +45,9 @@ export default class Careers extends Component {
     }
     render() {
         return (
-            <div className="container">
-             <Layout>
+             <Layout  >
                 
-                 <form action="/termsandconditions" method="POST" encType="multipart/form-data" className='form form-group ' onSubmit={(event) => this.handleSubmit(event)}>
+                 <form action="/termsandconditions" method="POST" encType="multipart/form-data" className='form form-group  ' onSubmit={(event) => this.handleSubmit(event)}>
                      <h2>Apply here</h2>
                      <label htmlFor="name">Name</label>
                      <input type="text" id='name' className="form-control" required value={this.state.name} onChange={(e) => this.handleName(e)}/>
@@ -59,7 +58,7 @@ export default class Careers extends Component {
                     <button type="submit" className="bg-primary">Apply</button>
                  </form>
              </Layout>
-             </div>
+             
         )
     }
 }
