@@ -37,7 +37,7 @@ class App extends React.Component {
     console.log(this.props);
 
     return (
-     <div className="App bg-secondary">
+     <div className="App bg-muted">
         <Switch>
           <Route path='/' component={Home} exact/>
           <Route path='/login' component={Login}/>

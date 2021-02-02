@@ -25,7 +25,7 @@ class Home extends React.Component {
     render() {
        
         return (
-            <div>
+            
                 <Layout>
                     <div className="container-fluid container-min-max-width">
                         <div className="row">
@@ -45,7 +45,7 @@ class Home extends React.Component {
                     </div>
                   </div>
                </Layout>
-            </div>
+            
         )
     }
 }
