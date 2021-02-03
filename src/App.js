@@ -39,8 +39,8 @@ class App extends React.Component {
     return (
      <div className="App bg-muted">
         <Switch>
-          <Route path='/' component={Home} exact/>
-          <Route path='/login' component={Login}/>
+          <Route path='/' render={(props) => (<Home {...props} user={user} signOut={signOut}/>)} exact/>
+          <Route path='/login' render={(props) => (<Login {...props} signInWithGoogle={signInWithGoogle}/>)} />
           <Route path='/about' component={About}/>
           <Route path='/careers' component={Careers}/>
           <Route path='/termsandconditions' component={Terms}/>

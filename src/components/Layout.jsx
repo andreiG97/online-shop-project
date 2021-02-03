@@ -4,10 +4,10 @@ import Footer from './Footer';
 import "./Layout.css"
 
 function Layout(props) {
-    const { children } = props
+    const { children, user, signOut } = props
     return (
         <div className="layout">
-            <Header/>
+            <Header user={user} signOut={signOut}/>
                 {children}
             <Footer/>
         </div>

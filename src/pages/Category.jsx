@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
 import Products from '../utils/products.json';
+import ProductList from '../components/ProductList';
 
 export default class Category extends Component {
     constructor(props){
@@ -27,6 +28,12 @@ export default class Category extends Component {
                 <h2>
                     {this.state.category.name}
                 </h2>
+                {
+                    this.state.category.items
+                                            ? <ProductList products={this.state.category.items}/>
+                                            : null
+                }
+                
             </div>
          </Layout>
         )
