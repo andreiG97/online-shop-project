@@ -7,15 +7,17 @@ function ProductList(props) {
     return (
         <div className="container">
            <div className="row">
-                { 
-                    products.map((product) => {
-                        return(
-                                <ProductItem
-                                key={product.id}
-                                {...product}
-                                />
-                            );
-                        })
+                { products
+                          ?
+                            products.map((product) => {
+                                return(
+                                        <ProductItem
+                                        key={product.id}
+                                        {...product}
+                                        />
+                                    );
+                                })
+                            : null    
                     }   
            </div>
         </div>
