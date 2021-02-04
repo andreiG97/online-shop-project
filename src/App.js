@@ -18,7 +18,9 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
+  facebookProvider: new firebase.auth.FacebookAuthProvider()
 };
+
 
 class App extends React.Component {
   constructor(props){
@@ -32,15 +34,20 @@ class App extends React.Component {
       user,
       signOut,
       signInWithGoogle,
+      signInWithFacebook
     } = this.props;
 
     console.log(this.props);
 
     return (
      <div className="App bg-muted">
+      
         <Switch>
           <Route path='/' render={(props) => (<Home {...props} user={user} signOut={signOut}/>)} exact/>
-          <Route path='/login' render={(props) => (<Login {...props} signInWithGoogle={signInWithGoogle}/>)} />
+          <Route path='/login' render={(props) => (<Login {...props} signInWithGoogle={signInWithGoogle}
+            signInWithFacebook={signInWithFacebook}
+          />)} 
+          />
           <Route path='/about' component={About}/>
           <Route path='/careers' component={Careers}/>
           <Route path='/termsandconditions' component={Terms}/>
