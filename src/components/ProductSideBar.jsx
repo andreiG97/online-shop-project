@@ -74,6 +74,8 @@ export default class ProductSideBar extends Component {
                 <div>
                     <input
                          type="checkbox"
+                         id="Low-price"
+                         className="mx-2"
                          name="Low-price"
                          checked={this.checkBoxValue('Low-price')}
                          onChange={(e) => this.displayProducts(e, 0, 10)}
@@ -84,6 +86,8 @@ export default class ProductSideBar extends Component {
                 <div>
                     <input 
                         type="checkbox" 
+                        id="Reasonable-price"
+                        className="mx-2"
                         name="Reasonable-price" 
                         checked={this.checkBoxValue('Reasonable-price')}
                         onChange={(e) => this.displayProducts(e, 10, 50)}
@@ -93,7 +97,9 @@ export default class ProductSideBar extends Component {
 
                 <div>
                     <input 
-                        type="checkbox" 
+                        type="checkbox"
+                        id="High-price" 
+                        className="mx-2"
                         name="High-price" 
                         checked={this.checkBoxValue('High-price')} 
                         onChange={(e) => this.displayProducts(e, 50, Infinity)}
