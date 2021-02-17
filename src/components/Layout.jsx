@@ -7,7 +7,10 @@ function Layout(props) {
     const { children, user, signOut } = props
     return (
         <div className="layout">
-            <Header user={user} signOut={signOut}/>
+            <Header 
+                user={user} 
+                signOut={signOut}
+                />
                 {children}
             <Footer/>
         </div>

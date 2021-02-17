@@ -12,7 +12,8 @@ import Page404 from './pages/Page404.jsx';
 import {Route, Switch} from 'react-router-dom';
 import Category from './pages/Category';
 import Terms from './/pages/TermsAndConditions';
-import "./utils/utility-classes.css"
+import "./utils/utility-classes.css";
+import Cart from './pages/Cart';
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
@@ -48,6 +49,7 @@ class App extends React.Component {
             signInWithFacebook={signInWithFacebook}
           />)} 
           />
+           <Route path="/cart" component={Cart}/>
           <Route path='/about' component={About}/>
           <Route path='/careers' component={Careers}/>
           <Route path='/termsandconditions' component={Terms}/>

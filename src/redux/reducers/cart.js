@@ -5,14 +5,37 @@ const initialState = {
 export function cartReducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_TO_CART':
-            const product = action.payload; 
-            const newState = {
-                ...state,
-                products: [...state.products,
-                            product
-                          ]
+            let productInCart = false;
+
+            const newProducts = state.products.map(product => {
+                if(product.id === action.payload.product.id){
+                    productInCart = true;
+                    return{
+                        ...product,
+                        quantity: product.quantity + 1
+                    }
+                }else {
+                    return product;
+                }
+            })
+            if (!productInCart) {
+                
+                return Object.assign({}, state, {
+                    products: [
+                       
+                        ...state.products,
+                        {
+                            ...action.payload.product,
+                            quantity: 1
+                        }
+                    ]
+                })
+      
+            } else {
+                return Object.assign({}, state, {
+                    products: newProducts
+                });
             }
-            return newState; 
         
         case 'REMOVE_FROM_CART':
             return state;
