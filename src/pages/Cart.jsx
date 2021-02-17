@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { ReactComponent as Close} from '../assets/icons/close.svg';
+import { removeFromCart } from '../redux/actions/cart'
 
 function Cart(props) {
 
@@ -32,7 +33,7 @@ function Cart(props) {
                                         <p className="w-25">{ product.quantity }</p>
                                         <div className="w-25 d-flex justify-content-center">
                                             <p className="mr-2">{ product.price * product.quantity } { product.currency }</p>
-                                            <Close />
+                                            <Close onClick={() => props.removeFromCart({id: product.id})} />
                                         </div>
                                     </div>
                                 })       
@@ -54,5 +55,10 @@ function mapStateToProps(state) {
         products: state.products
     };
 }
+function mapDispatchToProps(dispatch) {
+    return {
+        removeFromCart: (payload) => dispatch(removeFromCart(payload))
+    };
+}
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

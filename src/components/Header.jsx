@@ -21,7 +21,7 @@ function Header(props) {
                     user 
                         ? <div> 
                             <p>Hi {user.displayName}</p>
-                            <button onClick={() => handleHeaderSignOut()}>Log out</button>
+                            <button className="btn btn-outline-dark d-flex align-items-center" onClick={() => handleHeaderSignOut()}>Log out</button>
                          </div>
                         : <Link to='/login' className="h5">Login</Link>
                 }
