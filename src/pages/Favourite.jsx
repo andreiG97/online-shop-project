@@ -10,6 +10,8 @@ import './Favourite.css'
 
 function Favourite(props) {
     const { favourites, removeProduct } = props;
+   // const { name, price, currency, image, id } = props
+
    
     return (
         <Layout>
@@ -28,7 +30,7 @@ function Favourite(props) {
                                             <button className="btn btn-primary" onClick={() => props.addToCart(product)}>
                                                 Add to Cart
                                             </button>
-                                            <div onClick={() => removeProduct({id: product.id})}>
+                                            <div onClick={() => removeProduct(product)}>
                                                 <Close/>
                                             </div>
                                     </div>
@@ -48,7 +50,7 @@ function Favourite(props) {
 
 function mapStateToProps(state){
     return{
-        favourites: state.favourites.products
+        products: state.favourites.products
     }
 }
 
