@@ -50,7 +50,7 @@ function Favourite(props) {
 
 function mapStateToProps(state){
     return{
-        products: state.favourites.products
+        favourites: state.favourites.products
     }
 }
 
