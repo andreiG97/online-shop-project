@@ -1,26 +1,19 @@
 import './App.css';
 import React from 'react';
-import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from './config/firebase.js';
 import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Careers from './pages/Careers.jsx';
-import Login from './pages/Login.jsx';
+import About from './pages/about/About.jsx';
+import Careers from './pages/careers/Careers.jsx';
+import Login from './pages/login/Login.jsx';
 import Page404 from './pages/Page404.jsx';
 import {Route, Switch} from 'react-router-dom';
 import Category from './pages/Category';
 import Terms from './/pages/TermsAndConditions';
 import "./utils/utility-classes.css";
-import Cart from './pages/Cart';
+import Cart from './pages/cart/Cart';
+import Favourite from './pages/Favourite';
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseAppAuth = firebaseApp.auth();
-const providers = {
-  googleProvider: new firebase.auth.GoogleAuthProvider(),
-  facebookProvider: new firebase.auth.FacebookAuthProvider()
-};
+
+
 
 
 class App extends React.Component {
@@ -31,27 +24,16 @@ class App extends React.Component {
 
   render(){
 
-    const {
-      user,
-      signOut,
-      signInWithGoogle,
-      signInWithFacebook
-    } = this.props;
-
-    console.log(this.props);
-
     return (
      <div className="App bg-muted">
       
         <Switch>
-          <Route path='/' render={(props) => (<Home {...props} user={user} signOut={signOut}/>)} exact/>
-          <Route path='/login' render={(props) => (<Login {...props} signInWithGoogle={signInWithGoogle}
-            signInWithFacebook={signInWithFacebook}
-          />)} 
-          />
+          <Route path='/' component={Home} exact/>
+          <Route path='/login' component={Login}/>
            <Route path="/cart" component={Cart}/>
           <Route path='/about' component={About}/>
           <Route path='/careers' component={Careers}/>
+          <Route path='/favourites' component={Favourite}/>
           <Route path='/termsandconditions' component={Terms}/>
           <Route path='/category/:categoryName' component={Category}/>
           <Route path='*' component={Page404}/>
@@ -63,7 +45,4 @@ class App extends React.Component {
   }
 }
 
-export default withFirebaseAuth({
-  providers,
-  firebaseAppAuth,
-})(App);
+export default App;

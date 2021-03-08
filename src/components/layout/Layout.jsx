@@ -1,15 +1,14 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../header/Header';
+import Footer from '../Footer';
 import "./Layout.css"
 
 function Layout(props) {
-    const { children, user, signOut } = props
+    const { children, user } = props
     return (
         <div className="layout">
             <Header 
                 user={user} 
-                signOut={signOut}
                 />
                 {children}
             <Footer/>

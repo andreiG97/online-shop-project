@@ -2,9 +2,9 @@ import React from 'react';
 import './Cart.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Layout from '../components/Layout';
-import { ReactComponent as Close} from '../assets/icons/close.svg';
-import { removeFromCart } from '../redux/actions/cart'
+import Layout from '../../components/layout/Layout';
+import { ReactComponent as Close} from '../../assets/icons/close.svg';
+import { removeFromCart } from '../../redux/actions/cart'
 
 function Cart(props) {
 
@@ -52,7 +52,7 @@ function Cart(props) {
 
 function mapStateToProps(state) {
     return {
-        products: state.products
+        products: state.cart.products
     };
 }
 function mapDispatchToProps(dispatch) {

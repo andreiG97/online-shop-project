@@ -1,0 +1,6 @@
+.fav-page svg {
+    cursor: pointer;
+}
+.fav-page img {
+    max-width: 200px;
+}
