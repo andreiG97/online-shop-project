@@ -11,7 +11,7 @@ import Terms from './/pages/TermsAndConditions';
 import "./utils/utility-classes.css";
 import Cart from './pages/cart/Cart';
 import Favourite from './pages/Favourite';
-
+import Product from './pages/Product/Product';
 
 
 
@@ -35,6 +35,7 @@ class App extends React.Component {
           <Route path='/careers' component={Careers}/>
           <Route path='/favourites' component={Favourite}/>
           <Route path='/termsandconditions' component={Terms}/>
+          <Route path='/product/:productId' component={Product}/>
           <Route path='/category/:categoryName' component={Category}/>
           <Route path='*' component={Page404}/>
         </Switch>

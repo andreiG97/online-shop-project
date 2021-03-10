@@ -3,4 +3,7 @@
 }
 .fav-page img {
     max-width: 200px;
+    min-width: 120px;
+    min-height: 70px;
+    max-height: 100px;
 }

@@ -11,3 +11,17 @@ export function removeFromCart(payload) {
         payload
     }
 }
+
+export function incrementProduct(payload) {
+    return {
+        type: 'INCREMENT',
+        payload
+    }
+}
+
+export function decrementProduct(payload) {
+    return {
+        type: 'DECREMENT',
+        payload
+    }
+}

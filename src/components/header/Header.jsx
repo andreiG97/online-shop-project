@@ -28,16 +28,17 @@ function Header(props) {
                 }
                 <div className="d-flex justify-content-end">
                     <Link to="/cart" className="d-flex">
-                            <Cart className="ml-2"/>
+                            <Cart className="mr-2"/>
                             <p className="ml-1">{numberOfProducts}</p>               
                     </Link>
                    
                 </div>
-                <div>
+                <div className="ml-2">
                     
                 <Link to="/favourites">
-                        <div className="">
+                        <div className="heart ml-2">
                             <FullHeart/>
+                            <p className="d-flex justify-content-center">{props.numberOfFavouriteProducts}</p>
                         </div>
                   </Link>      
                 </div>
@@ -50,7 +51,7 @@ function Header(props) {
 function mapStateToProps(state) {
     return {
         numberOfProducts: state.cart.products.length,
-
+        numberOfFavouriteProducts: state.favourites.products.length,
         user: state.user.data
     }
 }

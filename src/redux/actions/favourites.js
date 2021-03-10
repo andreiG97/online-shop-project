@@ -6,6 +6,7 @@ export function addToFav(payload){
 }
 
 export function removeFav(payload){
+    console.log(payload);
     return {
         type: 'REMOVE_FAV',
         payload

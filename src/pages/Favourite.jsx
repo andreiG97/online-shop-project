@@ -10,8 +10,10 @@ import './Favourite.css'
 
 function Favourite(props) {
     const { favourites, removeProduct } = props;
-   // const { name, price, currency, image, id } = props
+    const { name, price, currency, image, id } = props
 
+   // const { name, price, currency, image, id } = props
+    //console.log(props.favourites[0].product.id)
    
     return (
         <Layout>
@@ -21,16 +23,25 @@ function Favourite(props) {
                         <div className="row">
                             {
                                 favourites.map( product => {
-                                    return <div className="col-4 d-flex flex-column align-items-center text-center my-5" key={product.id}>
+                                   
+                                    return <div className="col d-flex flex-column align-items-center text-center my-5" key={product.id}>
                                            <div>
                                                 <img className="w-75" src={product.image} alt="Product"/>
                                                 <p>{ product.name }</p>
                                            </div>
                                             <p className="w-25">{ product.price } { product.currency }</p>
-                                            <button className="btn btn-primary" onClick={() => props.addToCart(product)}>
+                                            <button className="btn btn-primary" onClick={() => props.addToCart({ product: {
+                            
+                                                        id,
+                                                        name,
+                                                        price,
+                                                        currency,
+                                                        image
+                                                    
+                                                }})}>
                                                 Add to Cart
                                             </button>
-                                            <div onClick={() => removeProduct(product)}>
+                                            <div onClick={() => removeProduct({id: product.id})}>
                                                 <Close/>
                                             </div>
                                     </div>

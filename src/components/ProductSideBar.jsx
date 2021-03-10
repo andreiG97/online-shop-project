@@ -69,7 +69,7 @@ export default class ProductSideBar extends Component {
 
     render() {
         return (
-            <div className="col-3">
+            <div className="col mb-3">
                 <h6>Filter products</h6>
                 <div>
                     <input

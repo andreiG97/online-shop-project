@@ -5,6 +5,7 @@ import { addToCart } from '../../redux/actions/cart';
 //import {  ReactComponent as FullHeart} from '../../assets/icons/full-heart.svg';
 import { addToFav } from '../../redux/actions/favourites'
 import {  ReactComponent as Heart} from '../../assets/icons/heart.svg';
+import {Link} from 'react-router-dom';
 
 
 function ProductItem(props) {
@@ -14,9 +15,14 @@ function ProductItem(props) {
         
         
             <div className=" product-item col-4 d-flex flex-column align-items-center justify-content-center">
-                <img src={image} alt="Missing item" className="mb-3 w-100 h-50 my-3"/>
-                <p className="text-center">{name}</p>
-                <p className="text-center">{price + currency}</p>
+               <div className="d-flex align-items-center">
+                    <Link to={`/product/${id}`}>
+                        <img src={image} alt="Missing item" className="mb-1 w-100 h-50 "/>
+                        <p className=" mb-1 text-center">{name}</p>
+                        <p className="text-center">{price + currency}</p>
+                    </Link>
+
+               </div>
                 <button onClick={() => props.addToCart(
                     {
                         product: {
