@@ -10,7 +10,7 @@ import './Favourite.css'
 
 function Favourite(props) {
     const { favourites, removeProduct } = props;
-    const { name, price, currency, image, id } = props
+    
 
    // const { name, price, currency, image, id } = props
     //console.log(props.favourites[0].product.id)
@@ -30,16 +30,22 @@ function Favourite(props) {
                                                 <p>{ product.name }</p>
                                            </div>
                                             <p className="w-25">{ product.price } { product.currency }</p>
-                                            <button className="btn btn-primary" onClick={() => props.addToCart({ product: {
-                            
-                                                        id,
-                                                        name,
-                                                        price,
-                                                        currency,
-                                                        image
-                                                    
-                                                }})}>
-                                                Add to Cart
+                                            <button
+                                                className="btn btn-primary mb-4 font-weight-bold"
+                                            
+                                                onClick={() => {
+                                                    props.addToCart({
+                                                        product: {
+                                                            id: product.id,
+                                                            name: product.name,
+                                                            price: product.price,
+                                                            currency: product.currency,
+                                                            image: product.image
+                                                        }
+                                                    })
+                                                }}
+                                            >
+                                                Add to cart
                                             </button>
                                             <div onClick={() => removeProduct({id: product.id})}>
                                                 <Close/>
@@ -68,7 +74,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return{
         removeProduct: (product) => dispatch(removeFav(product)),
-        addToCart: (product) =>  dispatch(addToCart(product))
+        addToCart: (payload) =>  dispatch(addToCart(payload))
         
     }
 }
