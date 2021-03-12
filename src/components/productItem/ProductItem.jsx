@@ -14,7 +14,7 @@ function ProductItem(props) {
     return (
         
         
-            <div className=" product-item col-4 d-flex flex-column align-items-center justify-content-center">
+            <div className=" product-item col-md-4 col-12 d-flex flex-column align-items-center justify-content-center">
                <div className="d-flex align-items-center">
                     <Link to={`/product/${id}`}>
                         <img src={image} alt="Missing item" className="mb-1 w-100 h-50 "/>

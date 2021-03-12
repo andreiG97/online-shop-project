@@ -1,0 +1,34 @@
+/* la unele produse nu se incadreaza cum trebuie, parca nu tine cont de bootstrap, 
+nu ramane margine si scrisul vine peste poze */
+
+.product-page .image-wrapper {
+    width: 250px;
+    height: 250px;
+    justify-content: center;
+}
+
+.product-page .image-wrapper img {
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .product-page .image-wrapper {
+        width: 100%;
+        height: auto;
+        justify-content: start;
+    }
+
+    .product-page .image-wrapper img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-page .product-info {
+        flex-direction: column;
+    }
+
+    .product-page .product-details {
+        margin-top: 1.5rem;
+    }
+}
+
